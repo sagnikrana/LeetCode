@@ -12,15 +12,14 @@ class Solution(object):
         Open brackets must be closed in the correct order.
         Note that an empty string is also considered valid.
         """
-        s_list = list(s)
         tracker = []
         
         mapping = {'(':')', '{':'}','[':']'}
-        if len(s_list) == 0:
+        if len(s) == 0:
             return True
         
         
-        for i,bracket in enumerate(s_list):
+        for i,bracket in enumerate(s):
             if i == 0 or len(tracker) == 0:
                 tracker.append(bracket)
             else:
