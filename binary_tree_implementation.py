@@ -33,7 +33,7 @@ class BinaryTree(object):
 # 		  /   \
 # 		 2     3
 # 		/ \   / \
-#	   4   5 6   7
+#      4   5 6   7
 
 tree = BinaryTree(1)
 tree.root.left = Node(2)
