@@ -5,15 +5,10 @@ class Solution:
 
         You can use each character in text at most once. Return the maximum number of instances that can be formed.
         '''
-
-        if len(text) == 0:
-            return 0
-
-        balloon_list = set(str('balloon'))
-
+        
         balloon_dict = {}
 
-        for item in balloon_list:
+        for item in set(str('balloon')):
             balloon_dict[item] = 0
         
         for item in text:
