@@ -56,4 +56,4 @@ class Solution:
 
 if __name__ == '__main__':
     sol = Solution()
-    print(sol.canPlaceFlowers(flowerbed=[0, 0, 1, 0, 1], n=1))
+    print(sol.canPlaceFlowers(flowerbed=[1,0,0,0,1,0,0], n=2))
