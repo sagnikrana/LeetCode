@@ -8,4 +8,4 @@ from Employee)
 select d.name as Department,
 stat.name as Employee,
 stat.salary as Salary from Department d left join stat
-on d.id = stat.departmentId where salary_rank = 1;
+on d.id = stat.departmentId where stat.salary_rank = 1;
