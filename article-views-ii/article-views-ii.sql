@@ -1,9 +1,12 @@
 # Write your MySQL query statement below
 
-with stat as (select viewer_id, max(article_id) as max_id, min(article_id) as min_id, view_date
-from Views
-group by view_date, viewer_id
-having max_id <> min_id
-order by view_date desc, viewer_id, article_id)
+with cte as(
+select *, row_number() over(partition by article_id, author_id, viewer_id, view_date order by article_id, author_id, viewer_id, view_date) as row_num
+from views
+)
 
-select distinct(viewer_id) as id from stat order by id;
+select distinct viewer_id as id from cte
+where row_num=1
+group by viewer_id, view_date
+having count(article_id)>1
+order by id;
